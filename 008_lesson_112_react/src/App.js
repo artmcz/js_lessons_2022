@@ -18,7 +18,7 @@ const Logo = () => {
 //     const holder = 'Enter text here'
 //     const styleField = {
 //         width: '300px'
-//     };
+//     };npx create-react-app
 //     const fieldTypeText = 'text'
 //     return <input
 //             placeholder={holder}
