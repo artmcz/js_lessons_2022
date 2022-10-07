@@ -12,10 +12,10 @@ function Square(props) {
 
 function Setka(props) {
   
-  const div = '<h1></h1>';
+  const div = '<h1> sdgfdsgf</h1>';
 
   for (let i = 0; i <= props.num; i++) {
-    div += div;
+    
   }
 
   return (
