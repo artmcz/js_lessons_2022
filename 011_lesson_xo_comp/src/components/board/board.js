@@ -5,11 +5,7 @@ function Square(props) {
 	  </button>
 	);
 }
-  
-  
-  
-  
-  
+
 function Setka(props) {
 	
 	let div = '';
@@ -62,7 +58,7 @@ function Board(props) {
 				{renderSquare(7)}
 				{renderSquare(8)}
 			</div>
-			{renderSetka(8)}
+			renderSetka(8)
 		</div>
 	);
 }
