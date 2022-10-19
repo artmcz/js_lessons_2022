@@ -31,6 +31,14 @@ class App extends Component {
         })
     }
 
+    deleteItemAlex = () => {
+        this.setState(({data}) => {
+            return {
+                data: data.filter(item => !item.name.includes('Alex'))
+            }
+        })
+    }    
+
     // Да, пока могут добавляться пустые пользователи. Мы это еще исправим
     addItem = (name, salary) => {
         const newItem = {
@@ -79,6 +87,8 @@ class App extends Component {
                 return items.filter(item => item.rise);
             case 'moreThen1000':
                 return items.filter(item => item.salary > 1000);
+            case 'delAlex':
+                return items.filter(item => !item.name.includes('Alex'));                
             default:
                 return items
         }
@@ -91,12 +101,21 @@ class App extends Component {
     render() {
         const {data, term, filter} = this.state;
         const employees = this.state.data.length;
+        const emplAlex = this.state.data.filter(item => item.name.includes('Alex')).length;
         const increased = this.state.data.filter(item => item.increase).length;
         const visibleData = this.filterPost(this.searchEmp(data, term), filter);
 
+        
+        console.log(emplAlex.length);
+
+
+
         return (
             <div className="app">
-                <AppInfo employees={employees} increased={increased}/>
+                
+                <button onClick={this.deleteItemAlex}>Del Alex</button>
+
+                <AppInfo employees={employees} emplAlex={emplAlex} increased={increased}/>
     
                 <div className="search-panel">
                     <SearchPanel onUpdateSearch={this.onUpdateSearch}/>
